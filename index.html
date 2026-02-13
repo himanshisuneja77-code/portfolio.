@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="icon" href="logo.png" type="image/jpg">
+<title>Himanshi Suneja - Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* BODY */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;   
+  color: #0f172a;   
+             
+}
+p{
+    font-size: 20px;
+}
+
+
+/* NAVBAR */
+.navbar {
+  padding: 15px 20px;
+  text-align: center;
+  background-color: #0f172a;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.navbar a:hover {
+  color: #f59e0b;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #EAF4FF;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero img {
+  height: 50px;
+  margin: 10px;
+}
+
+/* SECTION */
+section {
+  padding: 30px 20px;
+}
+
+/* HEADINGS */
+section h2 {
+  border-left: 5px solid #1e3a8a;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* SKILLS */
+.skill {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #1e3a8a;
+  font-size: 30px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #1e3a8a;
+}
+
+/* EDUCATION CARD */
+.education-card {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #1e3a8a;
+}
+
+/* CONTACT */
+.contact-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #1e3a8a;
+  margin: 20px 40px;   
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 90%;          
+  padding: 8px;
+  margin: 10px 0;      
+  border: 1px solid #1e3a8a;
+}
+
+.contact-box button {
+  padding: 8px 15px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.contact-box button:hover {
+  background-color: #f59e0b;
+  color: black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <h1>Hi, I’m Himanshi</h1>
+  <p>BCA Student | Learning Web Development</p>
+  <a href="https://www.linkedin.com/in/himanshi-suneja-290209350/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+  </a>
+  <a href="https://github.com/himanshisuneja77-code" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+  </a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hi! I’m Himanshi, a passionate BCA student with a strong interest in programming and web development.
+    I love creating interactive websites, solving problems with code, and learning new technologies.
+    My goal is to build projects that are both creative and practical while continuously improving my skills.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" >
+     <h2>Skills</h2>
+     <center>
+  <span class="skill">HTML</span>
+  <span class="skill">CSS</span>
+  <span class="skill">C Programming</span>
+  <span class="skill">C++ </span>
+  </center>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>College Management System</h3>
+    <p>Console-based project using C programming.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Hospital Management System</h3>
+    <p>Menu-driven project with file handling.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Library Management System</h3>
+    <p>Book issue and return tracking system.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Number Guessing Game</h3>
+    <p>C++ based random number game.</p>
+  </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="education-card">
+    <h3>12th Class</h3>
+    <p>Bharat National Public School - 85%</p>
+  </div>
+
+  <div class="education-card">
+    <h3>BCA</h3>
+    <p>JIMS Rohini - First Year</p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <strong>
+  <p>Email: himanshisuneja77@gmail.com</p>
+  <p>Phone: 8287414825</p>
+</strong>
+  <div class="contact-box">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <br>
+    <button>Send Message</button>
+  </div>
+</section>
+
+</body>
+</html>
