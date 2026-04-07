@@ -1,233 +1,674 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <link rel="icon" href="logo.png" type="image/jpg">
-<title>Himanshi Suneja - Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-/* BODY */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/jpg">
+    <title>Himanshi Suneja - Portfolio</title>
+    <style>
+        :root {
+  --bg-color: #0f172a;      /* dark background */
+--text-color: #1f1f1f; /* dark gray text */
+  --accent-color: #4b0082; /* matches gradient */
+}
+
+/* ANIMATED GRADIENT BACKGROUND */
 body {
   margin: 0;
+ background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+ color: var(--text-color);
   font-family: Arial, sans-serif;
-  background-color: #FFFFFF;   
-  color: #0f172a;   
-             
-}
-p{
-    font-size: 20px;
 }
 
 
-/* NAVBAR */
+/* ANIMATION KEYFRAMES */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+    /* NAVBAR */
 .navbar {
-  padding: 15px 20px;
-  text-align: center;
-  background-color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(70, 68, 68, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar a {
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
   color: white;
+}
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
   text-decoration: none;
-  margin-right: 15px;
-  font-size: 14px;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #f59e0b;
+.nav-links li a:hover {
+  color: #ffcc70;
 }
 
-/* HERO */
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+/* HERO SECTION */
 .hero {
-  padding: 60px 20px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: #EAF4FF;
+  padding: 20px;
+  color: var(--text-color);
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
-.hero img {
-  height: 50px;
-  margin: 10px;
+.hero p {
+  font-size: 20px;
+  opacity: 0.9;
 }
 
-/* SECTION */
-section {
-  padding: 30px 20px;
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+/* ABOUT SECTION */
+.about {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  color: var(--text-color);
 }
 
-/* HEADINGS */
-section h2 {
-  border-left: 5px solid #1e3a8a;
-  padding-left: 10px;
+.about h2 {
+  font-size: 40px;
   margin-bottom: 15px;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 10px;
 }
 
-/* SKILLS */
-.skill {
-  background-color: white;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  text-align: center;
-  border: 1px solid #1e3a8a;
-  font-size: 30px;
+.about p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
-/* PROJECT CARD */
-.project-card {
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #1e3a8a;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 15px;
+  }
+
+  .about h2 {
+    font-size: 24px;
+  }
+}
+.logo img {
+  display: block;
+}
+/* SKILLS SECTION */
+.skills {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  color: var(--text-color);
 }
 
-/* EDUCATION CARD */
-.education-card {
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #1e3a8a;
+.skills h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 10px;
 }
 
-/* CONTACT */
-.contact-box {
-  background-color: white;
+/* GRID */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.skill-card {
+  background: rgba(255, 255, 255, 0.08);
   padding: 20px;
-  border-radius: 5px;
-  border: 1px solid #1e3a8a;
-  margin: 20px 40px;   
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: default;
 }
 
-.contact-box input,
-.contact-box textarea {
-  width: 90%;          
-  padding: 8px;
-  margin: 10px 0;      
-  border: 1px solid #1e3a8a;
+/* HOVER EFFECT */
+.skill-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+/* PROJECT CARD TEXT STYLE */
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.contact-box button {
-  padding: 8px 15px;
-  background-color: #1e3a8a;
-  color: white;
+.project-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.project-card h3 {
+  margin-bottom: 5px;
+}
+
+.project-tech {
+  display: inline-block;
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.project-card ul {
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* HOBBIES SECTION */
+.hobbies {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  color: var(--text-color);
+}
+
+.hobbies h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 10px;
+}
+
+/* HOBBIES CARDS CONTAINER */
+.hobbies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* INDIVIDUAL HOBBY CARD */
+.hobby-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hobby-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hobby-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.hobby-card p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hobbies-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+/* RESUME BUTTON */
+.resume-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-bottom: 20px;
+  background-color: white;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.resume-btn:hover {
+  background-color: rgb(216, 157, 166);
+  transform: translateY(-3px);
+}
+/* CONTACT SECTION */
+.contact {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  color: var(--text-color);
+  text-align: center; /* centers headings */
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 10px;
+}
+
+/* CONTACT INFO */
+.contact-info p {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* CONTACT FORM BOX */
+.contact-box {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.15); /* slightly lighter than the page */
+  backdrop-filter: blur(8px); /* glassmorphism effect */
+  padding: 35px 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto; /* center the form */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect (optional) */
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+/* CONTACT FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
   border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: whitesmoke;
+  color: var(--text-color);
+  font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: rgb(216, 157, 166);
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-box {
+    padding: 20px 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+  }
+}
+/* IMAGE / CARD ANIMATION + BORDER + SHADOW */
+.float-img {
+  border: 2px solid rgba(255, 255, 255, 0.3); /* soft border */
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 4s ease-in-out infinite; /* floating animation */
+}
+
+/* BOUNCE / FLOAT ANIMATION */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* HOVER EFFECT */
+.float-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5); /* stronger shadow on hover */
+  border-color: var(--accent-color); /* border accent on hover */
+}
+/* EDUCATION SECTION */
+.education {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  color: var(--text-color);
+}
+
+.education h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 10px;
+  text-align: left;
+}
+
+/* EDUCATION CARDS CONTAINER */
+.education-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* INDIVIDUAL EDUCATION CARD */
+.education-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.education-card h3 {
+  margin-bottom: 10px;
+}
+
+.education-card p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .education-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 
 
-.contact-box button:hover {
-  background-color: #f59e0b;
-  color: black;
-}
 </style>
 </head>
-
 <body>
+    
+  <!-- ================= NAVIGATION BAR ================= -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="logo.png" alt="logo" height="70px" class="float-img">
+      </div>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+<!-- Download Resume Button -->
+<a href="hs_resume.pdf" download class="resume-btn">Download Resume</a>
+    </nav>
+  </header>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</div>
 
-<!-- HERO -->
-<div class="hero" id="home">
-  <h1>Hi, I’m Himanshi</h1>
-  <p>BCA Student | Learning Web Development</p>
-  <a href="https://www.linkedin.com/in/himanshi-suneja-290209350/" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-  </a>
-  <a href="https://github.com/himanshisuneja77-code" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
-  </a>
-</div>
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="home">
+    <h1>Hi, I’m Himanshi</h1>
+    <p>Tech Student | Learning Web Development</p>
+   <p>
+    <!--Linkedin acc-->
+ <a href="https://www.linkedin.com/in/himanshi-suneja-290209350/" target="_blank"><img class="float-img" src="https://tse3.mm.bing.net/th/id/OIP.3g0reJi0euJsi2bKLMTW3AHaFj?w=1024&h=768&rs=1&pid=ImgDetMain&o=7&rm=3" alt="linkedin" height="30px"></a>
+     <!--Leet code acc-->
+    <a href="https://leetcode.com/u/Himanshisuneja/" target="_blank"><img class="float-img" src="https://cdn.iconscout.com/icon/free/png-256/leetcode-3628885-3030025.png"alt="leet code" height="30px" ></a>
+      <!--GitHub acc-->
+  <a href="https://github.com/himanshisuneja77-code" target="_blank"><img class="float-img" src="https://seekvectors.com/files/download/290053937c157806ceaa16b435aa34fe.jpg"alt="git hub code" height="30px" ></a>
+ </p>
+  <br> 
+  </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Hi! I’m Himanshi, a passionate BCA student with a strong interest in programming and web development.
-    I love creating interactive websites, solving problems with code, and learning new technologies.
-    My goal is to build projects that are both creative and practical while continuously improving my skills.
-  </p>
-</section>
 
-<!-- SKILLS -->
-<section id="skills" >
-     <h2>Skills</h2>
-     <center>
-  <span class="skill">HTML</span>
-  <span class="skill">CSS</span>
-  <span class="skill">C Programming</span>
-  <span class="skill">C++ </span>
-  </center>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+     Hi! I’m Himanshi, a passionate BCA student with a strong interest in 
+ programming and web development. I love creating interactive websites,
+ solving problems with code, and learning new technologies. 
+ My goal is to build projects that are both creative and practical, 
+ while continuously improving my skills in software development
+ and technology.
+    </p>
+  </section>
+
+  <!-- ================= SKILLS SECTION ================= -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+
+    <!-- Skills Grid -->
+    <div class="skills-container">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">C Programming</div>
+     
+    </div>
+  </section>
+
+
+
+<!-- ================= PROJECTS SECTION ================= -->
+<section id="projects" class="projects">
   <h2>Projects</h2>
 
-  <div class="project-card">
-    <h3>College Management System</h3>
-    <p>Console-based project using C programming.</p>
-  </div>
+  <div class="projects-container">
 
-  <div class="project-card">
-    <h3>Hospital Management System</h3>
-    <p>Menu-driven project with file handling.</p>
-  </div>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>College Management System</h3>
+      <span class="project-tech">C Programming</span>
+      <ul>
+        <li>Developed a console-based management system</li>
+        <li>Managed student records using structures and file handling</li>
+        <li>Used modular functions for clean and readable code</li>
+      </ul>
+    </div>
 
-  <div class="project-card">
-    <h3>Library Management System</h3>
-    <p>Book issue and return tracking system.</p>
-  </div>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Hospital Management System</h3>
+      <span class="project-tech">C Programming</span>
+      <ul>
+        <li>Menu-driven system for patient records and appointments</li>
+        <li>Used file operations for data storage and retrieval</li>
+        <li>Applied switch-case and loops for smooth navigation</li>
+      </ul>
+    </div>
 
-  <div class="project-card">
-    <h3>Number Guessing Game</h3>
-    <p>C++ based random number game.</p>
-  </div>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Library Management System</h3>
+      <span class="project-tech">C Programming</span>
+      <ul>
+        <li>System to issue, return, and track books</li>
+        <li>Used structures and arrays for data organization</li>
+        <li>Added input validation to reduce errors</li>
+      </ul>
+    </div>
 
+    <!-- Project 4 -->
+    <div class="project-card">
+      <h3>Voting System</h3>
+      <span class="project-tech">C Programming</span>
+      <ul>
+        <li>Implemented one-vote-per-user logic</li>
+        <li>Designed vote counting and result validation</li>
+        <li>Ensured data integrity using conditional checks</li>
+      </ul>
+    </div>
+    <!-- Project 5 -->
+<div class="project-card">
+  <h3>Number Guessing Game</h3>
+  <span class="project-tech">C++ Programming</span>
+  <ul>
+    <li>Designed a menu-driven number guessing game with limited attempts</li>
+    <li>Implemented random number generation using srand() and rand()</li>
+    <li>Added input validation and hint system (too high / too low)</li>
+    <li>Controlled game flow using loops and switch-case logic</li>
+  </ul>
+</div>
+
+
+  </div>
+  <!-- ================= HOBBIES SECTION ================= -->
+<section id="hobbies" class="hobbies">
+  <h2>Hobbies</h2>
+  <div class="hobbies-container">
+    <div class="hobby-card">
+      <h3>Travelling & Exploring ✈️</h3>
+      <p>I love discovering new places and experiencing different cultures.</p>
+    </div>
+    <div class="hobby-card">
+      <h3>Listening to Music 🎵</h3>
+      <p>Music relaxes me and helps me stay creative while coding.</p>
+    </div>
+    <div class="hobby-card">
+      <h3>Badminton 🏸</h3>
+      <p>Playing badminton keeps me active and improves focus and agility.</p>
+    </div>
+    <div class="hobby-card">
+      <h3>Cycling 🚴</h3>
+      <p>Cycling is my way to stay healthy and explore the outdoors.</p>
+    </div>
+  </div>
 </section>
-
-<!-- EDUCATION -->
-<section id="education">
+<!-- ================= EDUCATION SECTION ================= -->
+<section id="education" class="education">
   <h2>Education</h2>
 
-  <div class="education-card">
-    <h3>12th Class</h3>
-    <p>Bharat National Public School - 85%</p>
-  </div>
+  <div class="education-container">
 
-  <div class="education-card">
-    <h3>BCA</h3>
-    <p>JIMS Rohini - First Year</p>
-  </div>
+    <!-- Education 1 -->
+    <div class="education-card">
+      <h3>12th Class (Higher Secondary)</h3>
+      <p>Bharat National Public School | Completed: 2025 | Percentage: 85%</p>
+    </div>
 
+    <!-- Education 2 -->
+    <div class="education-card">
+      <h3>BCA (Bachelor of Computer Applications)</h3>
+      <p>JIMS Sector 3, Rohini | First Year | Ongoing</p>
+    </div>
+
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
+</section id="contact">
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="contact">
   <h2>Contact Me</h2>
-  <strong>
-  <p>Email: himanshisuneja77@gmail.com</p>
-  <p>Phone: 8287414825</p>
-</strong>
-  <div class="contact-box">
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea rows="4" placeholder="Your Message"></textarea>
-    <br>
-    <button>Send Message</button>
+
+  <!-- Contact Info -->
+  <div class="contact-info">
+    <p>Email: <a href="mailto:himanshisuneja77@gmail.com">himanshisuneja77@gmail.com</a></p>
+    <p>Number: 8287414825</p>
+<p> <a href="https://www.linkedin.com/in/himanshi-suneja-290209350/" target="_blank">Linkdin</a> </p>
   </div>
+
+  <!-- Contact Form -->
+  <form class="contact-form">
+    <label for="name"> Enter your Name
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    </label> <br>
+    <label for="mail"> Enter your Mail
+    <input type="email" id="mail" name="email" placeholder="Your Email" required>
+    </label> <br>
+    <label for="message"> Enter a message
+    <textarea name="message"id="message" placeholder="Your Message" cols="15" required></textarea>
+    </label> <br>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
+
+</header>
 
 </body>
 </html>
